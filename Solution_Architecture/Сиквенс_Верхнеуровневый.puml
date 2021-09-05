@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant Scheduler
+participant AviaSchedule
+activate Scheduler
+Scheduler -> AviaSchedule++: Периодический запрос
+AviaSchedule --> Scheduler: Ok
+
+
+AviaSchedule -> YandexAPI++: Запрос расписания
+YandexAPI --> AviaSchedule: Расписание
+
+@enduml
