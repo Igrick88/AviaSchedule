@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+boundary Handler
+control Controller
+control ImportFlightUseCase
+control Saver
+database Repository as db
+participant ЯндексAPI as ya
+
+Handler -> Controller: Надо импортировать расписание
+Controller -> ImportFlightUseCase: Импортируй расписание
+ImportFlightUseCase -> ya: Дай расписание
+ya --> ImportFlightUseCase: Расписание
+ImportFlightUseCase -> ImportFlightUseCase: Обработка данных
+ImportFlightUseCase -> Saver: Сохрани данные
+Saver -> db: Сохранить
+
+@enduml
