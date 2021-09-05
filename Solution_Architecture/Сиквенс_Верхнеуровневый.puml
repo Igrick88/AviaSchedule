@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+activate AviaSchedule
+AviaSchedule -> YandexAPI++: Запрос расписания
+note left: Периодический запрос
+return: Расписание
+
+@enduml
