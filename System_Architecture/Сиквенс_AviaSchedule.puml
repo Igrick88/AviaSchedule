@@ -3,11 +3,13 @@
 
 autonumber
 
+box AviaSchedule
 boundary Handler
 control Controller
 control ImportFlightUseCase
 control Saver
 database Repository as db
+end box
 participant ЯндексAPI as ya
 
 Handler -> Controller: Надо импортировать расписание
